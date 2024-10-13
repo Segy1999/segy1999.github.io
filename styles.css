@@ -28,7 +28,7 @@
     object-fit: cover;
   }
   
-  .nav {
+    .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,11 +41,11 @@
     list-style: none;
     display: flex;
     padding: 0;
+    width: 100%; /* Ensure the nav fills the full width */
   }
   
   .nav ul li {
-    display: inline-block;
-    margin-right: 10px;
+    flex-grow: 1; /* Make each list item (and button) grow equally */
   }
   
   .nav ul li:last-child {
@@ -56,12 +56,12 @@
     background-color: #c89d7c;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
     cursor: pointer;
     transition: opacity 0.3s;
-    width: 100%;
-    max-width: 200px;
+    width: 100%; /* Ensure the buttons fill the available space */
+    max-width: none; /* Remove the previous max-width */
     text-align: center;
     display: block;
   }
@@ -77,21 +77,21 @@
       padding: 10px;
     }
   
+    .nav ul {
+      flex-direction: column; /* Stack the buttons vertically */
+    }
+  
     .nav li {
       margin-right: 0;
       margin-bottom: 10px;
     }
   
     .nav-btn {
-      width: 100%;
-      text-align: left;
-    }
-  
-    .nav ul li {
-      width: 100%;
-      margin-bottom: 10px;
+      width: 100%; /* Ensure buttons fill the width on small screens */
+      text-align: center;
     }
   }
+ 
   
   .hero {
     display: flex;
