@@ -1,311 +1,283 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
-
-.background img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: rgba(156, 116, 115, 0);
-  margin-top: 20px;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-}
-
-.nav ul li{
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.nav ul li :last-child{
-  margin-right: 0;
-}
-.nav li {
-  margin-right: 20px;
-}
-
-.nav-btn {
-  background-color: #c89d7c;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  width: 100%;
-  max-width: 200px;
-  text-align: center;
-  display: block;
-}
-
-.nav-btn:hover {
-  opacity: 0.8;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  .background img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
   .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(156, 116, 115, 0);
+    margin-top: 20px;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-btn {
+    background-color: #c89d7c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: block;
+  }
+  
+  .nav-btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .nav {
       flex-direction: column;
       padding: 10px;
-  }
-
-  .nav li {
+    }
+  
+    .nav li {
       margin-right: 0;
       margin-bottom: 10px;
-  }
-
-  .nav-btn {
+    }
+  
+    .nav-btn {
       width: 100%;
       text-align: left;
+    }
+  
+    .nav ul li {
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
-  .nav ul li {
-    width: 100%; /* Ensure all buttons fill the width on small screens */
-    margin-bottom: 10px; /* Add space between buttons on mobile */
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
   }
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: #fff;
-}
-
-.book-now-btn {
-  background-color: #c89d7c;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.book-now-form {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.book-now-form h2 {
-  margin-top: 0;
-  color: #c89d7c;
-}
-
-.book-now-form label {
-  display: block;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.book-now-form input,
-.book-now-form select,
-.book-now-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.section {
-  padding: 50px;
-  max-width: 800px;
-  margin: auto;
-}
-
-#portfolio,
-#about-us,
-#policies {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.slideshow-container {
-  position: relative;
-  margin: auto;
-  text-align: center;
-}
-
-.mySlides {
-  display: none;
-}
-
-.mySlides img {
-  width: 100%;
-  height: auto;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: #c89d7c;
-  font-weight: bold;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
-
-.prev {
-  left: -10px;
-  background-image: linear-gradient(to right, rgba(104, 103, 103, 0.5), rgba(255, 255, 255, 0));
-}
-
-.next {
-  right: -10px;
-  background-image: linear-gradient(to left, rgba(104, 103, 103, 0.5), rgba(255, 255, 255, 0));
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.dot-container {
-  text-align: center;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* Contact Us Section */
-#contact-us {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#contact-us h2 {
-  margin-bottom: 20px;
-}
-
-#contact-us input,
-#contact-us textarea {
-  padding: 10px;
-}
-
-#contact-us button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#contact-us button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
-
-/* About Us and Policies Sections */
-#about-us,
-#policies {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-#about-us p,
-#policies li {
-  line-height: 1.8;
-  color: #666;
-}
-
-#policies ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#policies li {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-#policies li:last-child {
-  border-bottom: none;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .prev,
-  .next {
-      padding: 12px;
-      font-size: 16px;
+  
+  .book-now-btn {
+    background-color: #c89d7c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
   }
-
+  
+  .book-now-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .book-now-form h2 {
+    margin-top: 0;
+    color: #c89d7c;
+  }
+  
+  .book-now-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .book-now-form input,
+  .book-now-form select,
+  .book-now-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .section {
+    padding: 50px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  #portfolio,
   #about-us,
   #policies {
-      margin: 20px auto;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Adjustments for slideshow */
+  .slideshow-container {
+    overflow: hidden; /* Ensure content stays inside the container */
+    width: 100%; /* Full width */
+    height: auto; /* Automatically adjust height to content */
+    position: relative;
+  }
+  
+  .slideshow-wrapper {
+    display: flex;
+    animation: scroll 20s linear infinite; /* 20-second loop */
+    width: 100%; /* Adjust width to avoid images getting cut off */
+    height: auto; /* Ensure images adapt to container height */
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: auto; /* Ensure images are not cut off */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto; /* Adjust height to avoid cutting */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  /* Keyframes for sliding animation */
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-400%); } /* Move the full width of 4 slides */
+  }
+  
+  /* Contact Us Section */
+  #contact-us {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #contact-us h2 {
+    margin-bottom: 20px;
+  }
+  
+  #contact-us input,
+  #contact-us textarea {
+    padding: 10px;
+  }
+  
+  #contact-us button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #contact-us button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* About Us and Policies Sections */
+  #about-us,
+  #policies {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  #about-us p,
+  #policies li {
+    line-height: 1.8;
+    color: #666;
+  }
+  
+  #policies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #policies li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  #policies li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    #about-us,
+    #policies {
+      margin: 20px auto;
+    }
+  }
+
+  #portfolio {
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove any shadow */
+    text-align: center;
 }
 
-@media (max-width: 480px) {
-  .prev,
-  .next {
-      padding: 8px;
-      font-size: 14px;
-  }
+/* Center the heading in the portfolio section */
+#portfolio h2 {
+    display: inline-block; /* Limit the background to just the text */
+    background-color: #c89d7c; /* Add a white background */
+    padding: 10px 20px; /* Add some padding around the text */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    text-align: center; /* Center the text */
+    color: #ffffff; /* Optional: Set color for better visibility */
+    margin-bottom: 20px; /* Adjust margin for spacing */
 }
+  
