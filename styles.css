@@ -28,7 +28,7 @@
     object-fit: cover;
   }
   
-    .nav {
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,15 +41,16 @@
     list-style: none;
     display: flex;
     padding: 0;
-    width: 100%; /* Ensure the nav fills the full width */
+    width: 100%; /* Ensure the nav takes up the full width */
   }
   
   .nav ul li {
-    flex-grow: 1; /* Make each list item (and button) grow equally */
+    flex: 1; /* Make each list item (and button) take up equal space */
+    margin-right: 10px; /* Add space between buttons */
   }
   
   .nav ul li:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Remove the margin for the last item */
   }
   
   .nav-btn {
@@ -61,7 +62,6 @@
     cursor: pointer;
     transition: opacity 0.3s;
     width: 100%; /* Ensure the buttons fill the available space */
-    max-width: none; /* Remove the previous max-width */
     text-align: center;
     display: block;
   }
@@ -70,28 +70,22 @@
     opacity: 0.8;
   }
   
-  /* Responsive design */
+  /* Responsive design adjustments */
   @media (max-width: 768px) {
-    .nav {
-      flex-direction: column;
-      padding: 10px;
-    }
-  
     .nav ul {
-      flex-direction: column; /* Stack the buttons vertically */
+      flex-wrap: wrap; /* Ensure buttons wrap to the next line if screen space is insufficient */
     }
   
-    .nav li {
-      margin-right: 0;
+    .nav ul li {
+      flex: 1 1 auto; /* Allow the items to shrink or grow based on available space */
       margin-bottom: 10px;
     }
   
     .nav-btn {
-      width: 100%; /* Ensure buttons fill the width on small screens */
-      text-align: center;
+      width: 100%; /* Ensure buttons still take up full width of their container */
     }
   }
- 
+    
   
   .hero {
     display: flex;
