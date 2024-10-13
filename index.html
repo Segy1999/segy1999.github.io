@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kow Tattys Booking Page</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- Background image/logo -->
+<div class="background">
+<img src="images/ktclean.png" alt="Tattoo Shop Logo" />
+</div>
+
+<!-- Navigation menu -->
+<nav class="nav">
+<ul>
+<li><button class="nav-btn" onclick="location.href='#portfolio'">Portfolio</button></li>
+<li><button class="nav-btn" id="about-us-link" onclick="location.href='#about-us'">About Us</button></li>
+<li><button class="nav-btn" id="policies-link" onclick="location.href='#policies'">Policies</button></li>
+<li><button class="nav-btn" onclick="location.href='#contact-us'">Contact Us</button></li>
+</ul>
+</nav>
+
+<!-- Hero section -->
+<div class="hero">
+<div class="hero-content">
+<button class="hero-btn book-now-btn">Book Now</button>
+</div>
+</div>
+
+<!-- Book now form (hidden by default) -->
+<div class="book-now-form" style="display: none">
+<h2>Book Your Appointment</h2>
+<form id="myForm">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" autocomplete="name" required /><br />
+
+<label for="instagram-handle">Instagram Handle:</label>
+<input type="text" id="instagram-handle" name="instagram-handle" /><br />
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" autocomplete="email" required /><br />
+
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" name="phone" autocomplete="tel" /><br />
+
+<label for="date">Date:</label>
+<input type="date" id="date" name="date" autocomplete="bday" required /><br />
+
+<label for="design-type">Flash or Custom:</label>
+<select id="design-type" name="design-type">
+<option value="flash">Flash</option>
+<option value="custom">Custom</option>
+</select><br />
+
+<label for="source">How did you find out about me?:</label>
+<select id="source" name="source">
+<option value="Instagram">Personal Instagram</option>
+<option value="TikTok">TikTok</option>
+<option value="Eden Tattoo Page">Eden Tattoo Page</option>
+<option value="Other">Other</option>
+</select><br />
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" required></textarea><br />
+
+<label for="photos">Upload Photos (max 5):</label>
+<input type="file" id="photos" name="photos" multiple accept=".jpg, .jpeg, .png" /><br />
+
+<input type="submit" value="Submit" />
+<button type="button" class="close-btn" style="background-color: #c89d7c; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Close</button>
+</form>
+</div>
+
+<!-- Portfolio section -->
+<div id="portfolio" class="section">
+<h2>Portfolio</h2>
+<div class="slideshow-container">
+<div class="mySlides fade">
+<img src="images/boondocks.png" alt="Tattoo 1" />
+</div>
+<div class="mySlides fade">
+<img src="images/dragon.png" alt="Tattoo 2" />
+</div>
+<div class="mySlides fade">
+<img src="images/frsnchise.png" alt="Tattoo 3" />
+</div>
+<div class="mySlides fade">
+<img src="images/luvers.png" alt="Tattoo 4" />
+</div>
+<div class="mySlides fade">
+<img src="images/naruto.png" alt="Tattoo 5" />
+</div>
+<button class="prev" onclick="plusSlides(-1)">Previous</button>
+<button class="next" onclick="plusSlides(1)">Next</button>
+</div>
+<div class="dot-container">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+<span class="dot" onclick="currentSlide(5)"></span>
+</div>
+</div>
+
+<!-- About us section -->
+<div id="about-us" class="section">
+<h2>About Us</h2>
+<p>"Hi, my name is ____. I've been an artist for __ years."</p>
+</div>
+
+<!-- Policies section -->
+<div id="policies" class="section">
+<h2>Policies</h2>
+<ul>
+<li>"Filler"</li>
+<li>"Filler"</li>
+<li>"Filler"</li>
+<li>"Filler"</li>
+</ul>
+</div>
+
+<!-- Contact us section -->
+<div id="contact-us" class="section">
+<h2>Contact Us</h2>
+<p>For any requests outside of a regular booking, including but not limited to events/promotions, please leave a detailed message below.</p>
+<form id="contactForm">
+<label for="contact">Phone number or Email:</label>
+<input type="text" id="contact" name="contact" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^[0-9]{3}-[0-9]{3}-[0-9]{4}$">
+<span>Format: example@example.com or 123-456-7890</span><br />
+<input type="hidden" id="honeypot" name="honeypot" />
+<div style="display:none;">
+<label for="captcha">Please enter the code:</label>
+<input type="text" id="captcha" name="captcha" required>
+<canvas id="captcha-canvas" width="100" height="30"></canvas>
+</div>
+<button type="submit">Submit</button>
+<label for="message">Message:</label>
+<textarea id="message" name="message" required></textarea>
+</form>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
