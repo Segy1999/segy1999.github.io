@@ -67,56 +67,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     });
 })
 
-// Define slideshow functions
-let slideIndex = 1;
-const slides = document.getElementsByClassName("mySlides");
-const dots = document.getElementsByClassName("dot");
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex + n);
-}
-
-function currentSlide(n) {
-  showSlides(n);
-}
-
-function showSlides(n) {
-  if (slides.length > 0 && dots.length > 0) {
-    // Reset n if it exceeds or is less than the number of slides
-    if (n > slides.length) n = 1;
-    if (n < 1) n = slides.length;
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[n - 1].style.display = "block";
-    dots[n - 1].className += " active";
-    slideIndex = n;
-  } else {
-    console.error("Missing slides or dots");
-  }
-}
-
-// Event listeners for previous and next buttons
-const prevButton = document.querySelector(".prev");
-const nextButton = document.querySelector(".next");
-
-if (prevButton && nextButton) {
-  prevButton.addEventListener("click", () => {
-    plusSlides(-1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    plusSlides(1);
-  });
-} else {
-  console.error("Missing previous or next button");
-}
-
 // Form Validation and Submission
 const form = document.getElementById('myForm');
 const contactInput = document.getElementById('contact');
