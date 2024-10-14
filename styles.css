@@ -161,6 +161,8 @@
     width: 100%; /* Full width */
     height: auto; /* Automatically adjust height to content */
     position: relative;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
   }
   
   .slideshow-wrapper {
@@ -168,6 +170,8 @@
     animation: scroll 30s linear infinite; /* 20-second loop */
     width: 100%; /* Adjust width to avoid images getting cut off */
     height: auto; /* Ensure images adapt to container height */
+    position: relative;
+    left: 0;
   }
   
   .slide {
