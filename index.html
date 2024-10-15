@@ -25,15 +25,62 @@
     <!-- Hero section -->
     <div class="flex flex-col items-center justify-center h-screen">
         <div>
-            <button class="book-now-btn bg-[#c89d7c] text-white border-none py-2 px-4 text-lg cursor-pointer">Book Now</button>
+            <button id="bookNowBtn" class="book-now-btn bg-[#c89d7c] text-white border-none py-2 px-4 text-lg cursor-pointer hover:bg-[#b68c6b] transition-colors">Book Now</button>
         </div>
     </div>
 
     <!-- Book now form (hidden by default) -->
-    <div class="book-now-form hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg shadow-lg w-11/12 max-h-[80vh] overflow-y-auto">
-        <h2 class="mt-0 text-[#c89d7c]">Book Your Appointment</h2>
+    <div id="bookNowForm" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg shadow-lg w-11/12 max-h-[80vh] overflow-y-auto">
+        <h2 class="mt-0 text-[#c89d7c] text-2xl font-bold mb-4">Book Your Appointment</h2>
         <form id="myForm" class="space-y-4">
-            <!-- Form fields... -->
+            <div>
+                <label for="name" class="block text-gray-700 mb-2">Name:</label>
+                <input type="text" id="name" name="name" autocomplete="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div>
+                <label for="instagram-handle" class="block text-gray-700 mb-2">Instagram Handle (optional):</label>
+                <input type="text" id="instagram-handle" name="instagram-handle" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div>
+                <label for="email" class="block text-gray-700 mb-2">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div>
+                <label for="phone" class="block text-gray-700 mb-2">Phone:</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div>
+                <label for="date" class="block text-gray-700 mb-2">Date:</label>
+                <input type="date" id="date" name="date" autocomplete="bday" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div>
+                <label for="design-type" class="block text-gray-700 mb-2">Flash or Custom:</label>
+                <select id="design-type" name="design-type" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]">
+                    <option value="flash">Flash</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+            <div>
+                <label for="source" class="block text-gray-700 mb-2">How did you find out about me?:</label>
+                <select id="source" name="source" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]">
+                    <option value="Instagram">Personal Instagram</option>
+                    <option value="TikTok">TikTok</option>
+                    <option value="Eden Tattoo Page">Eden Tattoo Page</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="message" class="block text-gray-700 mb-2">Message:</label>
+                <textarea id="message" name="message" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c] h-32"></textarea>
+            </div>
+            <div>
+                <label for="photos" class="block text-gray-700 mb-2">Upload Photos (max 5):</label>
+                <input type="file" id="photos" name="photos" multiple accept=".jpg, .jpeg, .png" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c89d7c]" />
+            </div>
+            <div class="flex justify-between">
+                <input type="submit" value="Submit" class="bg-[#c89d7c] text-white border-none py-2 px-4 text-lg cursor-pointer hover:bg-[#b68c6b] transition-colors rounded-md" />
+                <button type="button" id="closeBookNowForm" class="bg-gray-300 text-gray-700 border-none py-2 px-4 text-lg cursor-pointer hover:bg-gray-400 transition-colors rounded-md">Close</button>
+            </div>
         </form>
     </div>
 
@@ -42,13 +89,12 @@
         
         <!-- Slideshow container -->
         <div class="overflow-hidden w-full relative">
-            <div class="flex animate-scroll">
+            <div id="slideshow" class="flex transition-transform duration-500 ease-in-out">
                 <div class="slide min-w-full"><img src="images/boondocks.png" alt="Tattoo 1" class="w-full h-auto object-cover" /></div>
                 <div class="slide min-w-full"><img src="images/dragon.png" alt="Tattoo 2" class="w-full h-auto object-cover" /></div>
                 <div class="slide min-w-full"><img src="images/frsnchise.png" alt="Tattoo 3" class="w-full h-auto object-cover" /></div>
                 <div class="slide min-w-full"><img src="images/luvers.png" alt="Tattoo 4" class="w-full h-auto object-cover" /></div>
                 <div class="slide min-w-full"><img src="images/naruto.png" alt="Tattoo 5" class="w-full h-auto object-cover" /></div>
-                <div class="slide min-w-full"><img src="images/boondocks.png" alt="Tattoo 1" class="w-full h-auto object-cover" /></div>
             </div>
         </div>
     </div>
@@ -75,11 +121,25 @@
         <h2 class="mb-4">Contact Us</h2>
         <p class="mb-4">For any requests outside of a regular booking, including but not limited to events/promotions, please leave a detailed message below.</p>
         <form id="contactForm" class="space-y-4">
-            <!-- Form fields... -->
+            <div>
+                <label for="contactInfo" class="block text-white mb-2">Phone number or Email:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^[0-9]{3}-[0-9]{3}-[0-9]{4}$" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-white text-gray-700" />
+                <span class="text-sm text-white">Format: example@example.com or 123-456-7890</span>
+            </div>
+            <input type="hidden" id="honeypot" name="honeypot" />
+            <div class="hidden">
+                <label for="captcha" class="block text-white mb-2">Please enter the code:</label>
+                <input type="text" id="captcha" name="captcha" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-white text-gray-700" />
+                <canvas id="captcha-canvas" width="100" height="30"></canvas>
+            </div>
+            <div>
+                <label for="contactMessage" class="block text-white mb-2">Message:</label>
+                <textarea id="contactMessage" name="contactMessage" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-white h-32 text-gray-700"></textarea>
+            </div>
+            <button type="submit" class="bg-white text-[#c89d7c] border-none py-2 px-4 text-lg cursor-pointer hover:bg-gray-100 transition-colors rounded-md">Submit</button>
         </form>
     </div>
 
     <script src="index.js"></script>
 </body>
 </html>
-
