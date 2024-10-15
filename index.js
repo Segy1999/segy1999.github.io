@@ -1,19 +1,3 @@
-// Slideshow functionality
-const slideshow = document.getElementById('slideshow');
-const slides = slideshow.children;
-let currentSlide = 0;
-
-function showSlide(index) {
-    slideshow.style.transform = `translateX(-${index * 100}%)`;
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-// Change slide every 5 seconds
-setInterval(nextSlide, 5000);
 
 // Book Now button functionality
 const bookNowBtn = document.querySelector(".hero-btn.book-now-btn");
