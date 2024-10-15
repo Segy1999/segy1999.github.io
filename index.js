@@ -186,3 +186,19 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
       alert('Invalid CAPTCHA code');
     }
 });
+
+const slideshow = document.getElementById('slideshow');
+const slides = slideshow.children;
+let currentSlide = 0;
+
+function showSlide(index) {
+    slideshow.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Change slide every 5 seconds
+setInterval(nextSlide, 5000);
