@@ -1,144 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kow Tattys Booking Page</title>
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kow Tattys Booking Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<!-- Background image/logo -->
-<div class="background">
-<img src="images/ktclean.png" alt="Tattoo Shop Logo" />
-</div>
-
-<!-- Navigation menu -->
-<nav class="nav">
-<ul>
-<li><button class="nav-btn" onclick="location.href='#portfolio'">Portfolio</button></li>
-<li><button class="nav-btn" id="about-us-link" onclick="location.href='#about-us'">About Us</button></li>
-<li><button class="nav-btn" id="policies-link" onclick="location.href='#policies'">Policies</button></li>
-<li><button class="nav-btn" onclick="location.href='#contact-us'">Contact Us</button></li>
-</ul>
-</nav>
-
-<!-- Hero section -->
-<div class="hero">
-<div class="hero-content">
-<button class="hero-btn book-now-btn">Book Now</button>
-</div>
-</div>
-
-<!-- Book now form (hidden by default) -->
-<div class="book-now-form" style="display: none">
-<h2>Book Your Appointment</h2>
-<form id="myForm">
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" autocomplete="name" required /><br />
-
-<label for="instagram-handle">Instagram Handle (optional):</label>
-<input type="text" id="instagram-handle" name="instagram-handle" /><br />
-
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" autocomplete="email" required /><br />
-
-<label for="phone">Phone:</label>
-<input type="tel" id="phone" name="phone" autocomplete="tel" /><br />
-
-<label for="date">Date:</label>
-<input type="date" id="date" name="date" autocomplete="bday" required /><br />
-
-<label for="design-type">Flash or Custom:</label>
-<select id="design-type" name="design-type">
-<option value="flash">Flash</option>
-<option value="custom">Custom</option>
-</select><br />
-
-<label for="source">How did you find out about me?:</label>
-<select id="source" name="source">
-<option value="Instagram">Personal Instagram</option>
-<option value="TikTok">TikTok</option>
-<option value="Eden Tattoo Page">Eden Tattoo Page</option>
-<option value="Other">Other</option>
-</select><br />
-
-<label for="message">Message:</label>
-<textarea id="message" name="message" required></textarea><br />
-
-<label for="photos">Upload Photos (max 5):</label>
-<input type="file" id="photos" name="photos" multiple accept=".jpg, .jpeg, .png" /><br />
-
-<input type="submit" value="Submit" />
-<button type="button" class="close-btn" style="background-color: #c89d7c; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Close</button>
-</form>
-</div>
-
-<div id="portfolio" class="section">
-    <h2>Portfolio</h2>
-  
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-      <div class="slideshow-wrapper">
-        <div class="slide">
-          <img src="images/boondocks.png" alt="Tattoo 1" />
-        </div>
-        <div class="slide">
-          <img src="images/dragon.png" alt="Tattoo 2" />
-        </div>
-        <div class="slide">
-          <img src="images/frsnchise.png" alt="Tattoo 3" />
-        </div>
-        <div class="slide">
-          <img src="images/luvers.png" alt="Tattoo 4" />
-        </div>
-        <div class="slide">
-          <img src="images/naruto.png" alt="Tattoo 5" />
-        </div>
-        <div class="slide">
-          <img src="images/boondocks.png" alt="Tattoo 1" />
-        </div>
-      </div>
+<body class="font-sans text-white bg-gray-100">
+    <!-- Background image/logo -->
+    <div class="fixed inset-0 z-[-1]">
+        <img src="images/ktclean.png" alt="Tattoo Shop Logo" class="w-full h-screen object-cover" />
     </div>
-  </div>
 
+    <!-- Navigation menu -->
+    <nav class="flex justify-between items-center p-5 bg-transparent mt-5">
+        <ul class="flex w-full">
+            <li class="flex-1 mr-2"><button class="nav-btn w-full bg-[#c89d7c] text-white border-none py-2 px-4 text-base cursor-pointer transition-opacity hover:opacity-80" onclick="location.href='#portfolio'">Portfolio</button></li>
+            <li class="flex-1 mr-2"><button id="about-us-link" class="nav-btn w-full bg-[#c89d7c] text-white border-none py-2 px-4 text-base cursor-pointer transition-opacity hover:opacity-80" onclick="location.href='#about-us'">About Us</button></li>
+            <li class="flex-1 mr-2"><button id="policies-link" class="nav-btn w-full bg-[#c89d7c] text-white border-none py-2 px-4 text-base cursor-pointer transition-opacity hover:opacity-80" onclick="location.href='#policies'">Policies</button></li>
+            <li class="flex-1"><button class="nav-btn w-full bg-[#c89d7c] text-white border-none py-2 px-4 text-base cursor-pointer transition-opacity hover:opacity-80" onclick="location.href='#contact-us'">Contact Us</button></li>
+        </ul>
+    </nav>
 
-<!-- About us section -->
-<div id="about-us" class="section">
-<h2>About Us</h2>
-<p>"Hi, my name is ____. I've been an artist for __ years."</p>
-</div>
+    <!-- Hero section -->
+    <div class="flex flex-col items-center justify-center h-screen">
+        <div>
+            <button class="book-now-btn bg-[#c89d7c] text-white border-none py-2 px-4 text-lg cursor-pointer">Book Now</button>
+        </div>
+    </div>
 
-<!-- Policies section -->
-<div id="policies" class="section">
-<h2>Policies</h2>
-<ul>
-<li>"Filler"</li>
-<li>"Filler"</li>
-<li>"Filler"</li>
-<li>"Filler"</li>
-</ul>
-</div>
+    <!-- Book now form (hidden by default) -->
+    <div class="book-now-form hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg shadow-lg w-11/12 max-h-[80vh] overflow-y-auto">
+        <h2 class="mt-0 text-[#c89d7c]">Book Your Appointment</h2>
+        <form id="myForm" class="space-y-4">
+            <!-- Form fields... -->
+        </form>
+    </div>
 
-<!-- Contact us section -->
-<div id="contact-us" class="section">
-<h2>Contact Us</h2>
-<p>For any requests outside of a regular booking, including but not limited to events/promotions, please leave a detailed message below.</p>
-<form id="contactForm">
-<label for="contact">Phone number or Email:</label>
-<input type="text" id="contact" name="contact" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^[0-9]{3}-[0-9]{3}-[0-9]{4}$">
-<span>Format: example@example.com or 123-456-7890</span><br />
-<input type="hidden" id="honeypot" name="honeypot" />
-<div style="display:none;">
-<label for="captcha">Please enter the code:</label>
-<input type="text" id="captcha" name="captcha" required>
-<canvas id="captcha-canvas" width="100" height="30"></canvas>
-</div>
-<button type="submit">Submit</button>
-<label for="message">Message:</label>
-<textarea id="message" name="message" required></textarea>
-</form>
-</div>
+    <div id="portfolio" class="py-12 px-4 max-w-3xl mx-auto">
+        <h2 class="inline-block bg-[#c89d7c] px-5 py-2 rounded text-center text-white mb-5">Portfolio</h2>
+        
+        <!-- Slideshow container -->
+        <div class="overflow-hidden w-full relative">
+            <div class="flex animate-scroll">
+                <div class="slide min-w-full"><img src="images/boondocks.png" alt="Tattoo 1" class="w-full h-auto object-cover" /></div>
+                <div class="slide min-w-full"><img src="images/dragon.png" alt="Tattoo 2" class="w-full h-auto object-cover" /></div>
+                <div class="slide min-w-full"><img src="images/frsnchise.png" alt="Tattoo 3" class="w-full h-auto object-cover" /></div>
+                <div class="slide min-w-full"><img src="images/luvers.png" alt="Tattoo 4" class="w-full h-auto object-cover" /></div>
+                <div class="slide min-w-full"><img src="images/naruto.png" alt="Tattoo 5" class="w-full h-auto object-cover" /></div>
+                <div class="slide min-w-full"><img src="images/boondocks.png" alt="Tattoo 1" class="w-full h-auto object-cover" /></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About us section -->
+    <div id="about-us" class="py-12 px-4 max-w-3xl mx-auto bg-[#c89d7c] rounded-lg shadow-lg">
+        <h2 class="mb-4">About Us</h2>
+        <p class="text-white">"Hi, my name is ____. I've been an artist for __ years."</p>
+    </div>
 
-<script src="index.js"></script>
+    <!-- Policies section -->
+    <div id="policies" class="py-12 px-4 max-w-3xl mx-auto bg-[#c89d7c] rounded-lg shadow-lg mt-8">
+        <h2 class="mb-4">Policies</h2>
+        <ul class="space-y-2">
+            <li class="text-white">"Filler"</li>
+            <li class="text-white">"Filler"</li>
+            <li class="text-white">"Filler"</li>
+            <li class="text-white">"Filler"</li>
+        </ul>
+    </div>
+
+    <!-- Contact us section -->
+    <div id="contact-us" class="py-12 px-4 max-w-xl mx-auto bg-[#c89d7c] rounded-lg shadow-lg mt-8">
+        <h2 class="mb-4">Contact Us</h2>
+        <p class="mb-4">For any requests outside of a regular booking, including but not limited to events/promotions, please leave a detailed message below.</p>
+        <form id="contactForm" class="space-y-4">
+            <!-- Form fields... -->
+        </form>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
+
