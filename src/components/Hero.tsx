@@ -13,7 +13,7 @@ export function Hero() {
         <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
           Alvin Edokpayi
         </h1>
-        <h2 className="text-2xl text-gray-600 mb-8">
+        <h2 className="text-xl md:text-2xl text-foreground mt-4 text-center">
           Results driven Analyst and aspiring Web Developer
         </h2>
         <div className="flex gap-6 justify-center">
