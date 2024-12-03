@@ -5,7 +5,6 @@ import { useTheme } from '../context/ThemeContext'
 
 const themes = [
   { name: 'light', icon: <Sun className="w-5 h-5" /> },
-  { name: 'dark', icon: <Moon className="w-5 h-5" /> },
   { name: 'cream', icon: <Palette className="w-5 h-5 rotate-180" /> },
   { name: 'camo', icon: <Palette className="w-5 h-5" /> }
 ] as const

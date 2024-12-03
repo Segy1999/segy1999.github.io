@@ -21,24 +21,6 @@
     --border: 214.3 31.8% 91.4%;
   }
 
-  .theme-dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 0 0% 35%;
-    --card: 0 0% 15%;
-    --card-foreground: 0 0% 35%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 0 0% 85%;
-    --primary: 0 0% 45%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 0 0% 35%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 0 0% 30%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 0 0% 85%;
-    --border: 217.2 32.6% 17.5%;
-  }
-
   .theme-cream {
     --background: 40 33% 95%;
     --foreground: 24 12% 10%;
