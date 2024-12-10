@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { Canvas } from '@react-three/fiber'
+import { AnimatedText3D } from './AnimatedText3D'
 
 export function Hero() {
   return (
@@ -8,15 +10,22 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center"
+        className="text-center w-full"
       >
-        <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-          Alvin Edokpayi
-        </h1>
+        <div className="h-[200px] w-full mb-1 relative">
+          <Canvas
+            camera={{ position: [0, 0, 5], fov: 75 }}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[0, 0, 5]} intensity={1} />
+            <AnimatedText3D text="Alvin Edokpayi" />
+          </Canvas>
+        </div>
         <h2 className="text-xl md:text-2xl text-black mt-4 text-center">
           Results driven Analyst and aspiring Web Developer
         </h2>
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-6 justify-center mt-8">
           <SocialLink href="https://github.com/segy1999" icon={<Github />} />
           <SocialLink href="https://www.linkedin.com/in/alvin-edokpayi-3194481b4/" icon={<Linkedin />} />
           <SocialLink href="mailto:alvin.edokpayi@gmail.com" icon={<Mail />} />
